@@ -1,0 +1,711 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    color: #333;
+    background-color: #30314D; /* This color stays as the background */
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/pattern_7301526.png') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(2px); /* Applies the blur effect only to the image */
+    z-index: -1;
+    opacity: 0.6; /* Optional: Adjust the opacity to balance the color and image */
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 15px auto; /* Center the header */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 13px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.3);
+    max-width: 90%; /* Ensure it doesn't go beyond the maximum width */
+}
+
+
+header .logo img {
+    height: 50px;
+    border-radius: 15px;
+}
+
+header nav {
+    flex: 1;
+    margin: 0 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+header .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1px; /* Small gap between the two sections */
+}
+
+header .auth-buttons a.auth-btn {
+    padding: 5px 10px;
+    background-color: #2a2e77;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    height: 30px;
+    width: 65px;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px; 
+    flex: 1;
+}
+
+header .auth-buttons a.login-btn {
+    border-radius: 12px 0 0 12px; /* Rounded corners for the left side */
+}
+
+header .auth-buttons a.signup-btn {
+    border-radius: 0 12px 12px 0; /* Rounded corners for the right side */
+}
+
+header .auth-buttons a.auth-btn:hover {
+    background-color: #1e225a; 
+}
+
+
+
+
+/* course card css  */
+.course-overview {
+    position: relative;
+    padding: 50px 0px;
+    margin: 40px auto;
+    width: 100%; /* Full width for the section */
+    /* max-width: 95%; */
+}
+
+.paragraph-background {
+    position: relative;
+    background-color: #F3F5FF;
+    padding: 30px 20px 60px 20px;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+    width: 98.3%; /* Full width for the paragraph div */
+    height: 144px;
+}
+
+.paragraph-background .overview-text {
+    text-align: left; /* Align text to the start (left) */
+    font-size: 18px;
+    color: #333;
+    margin: 42px 0px 20px 0px;
+    max-width: 720px;
+}
+
+.course-card-wrapper {
+    position: absolute;
+    top: 0;
+    right: 80px; /* Add 80px space from the right edge */
+    z-index: 2;
+    width: 320px; /* Fixed width for the card */
+}
+
+.course-card {
+    background-color: #fff;
+    border-radius: 22px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Ensure text is aligned to the left */
+    height: 395px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: .1px solid grey;
+}
+
+.course-card img {
+    width: 100%;
+    border-radius: 17px;
+    /* margin-bottom: 15px; */
+}
+ 
+.course-info h3 {
+    font-size: 18px;
+    color: #2a2e77;
+    margin-bottom: 10px;
+    text-align: left; /* Ensure heading is aligned to the left */
+    padding-left: 7px;
+}
+
+.course-info p {
+    font-size: 14px;
+    margin: 3px 0;
+    color: #555;
+    text-align: left; /* Ensure paragraph text is aligned to the left */
+    padding-left: 7px;
+}
+
+.price-enroll {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align price and button to the left */
+    margin-top: 7px;
+    gap: 90px;
+}
+
+.course-info .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff4b5c;
+    margin-right: 0px; /* Removed space between price and enroll button */
+}
+
+.course-info .old-price {
+    text-decoration: line-through;
+    font-weight: normal;
+    color: #999;
+    margin-left: 0px;
+}
+
+.course-info .enroll-btn {
+    padding: 5px 10px; /* Smaller padding to fit beside the price */
+    background-color: #2a2e77;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 60%;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-left: 0px; /* Removed space between the price and the button */
+}
+
+.course-info .enroll-btn:hover {
+    background-color: #1e225a;
+}
+/* Mentor and Course Includes Sections */
+.mentor-and-course-includes {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 25px;
+    gap: 20px;
+}
+
+.course-includes-section, .mentor-section {
+    flex: 1;
+    max-width: 48%;
+}
+
+.course-includes-section h2, .mentor-section h2 {
+    text-align: center;
+    color:#FFFCFC;
+    
+    margin: 50px 0px 20px 0px;
+}
+
+.course-includes, .know-your-mentor {
+    padding: 20px;
+    background-color: #f0f4ff;
+    border-radius: 16px;
+    color: #000000;
+    position: relative;
+}
+
+.know-your-mentor {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mentor-info {
+    display: flex;
+    align-items: center;
+}
+
+.mentor-info img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.mentor-details h3 {
+    margin-top: 0;
+    color: #2a2e77;
+}
+
+.mentor-details p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.course-includes ul {
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+}
+
+.course-includes ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.course-includes ul li img {
+    width: 40px;
+    margin-left: 10px;
+}
+
+/* Course Curriculum Styling */
+.course-curriculum {
+    max-width: 74%;
+    margin: 50px auto;
+    padding: 60px;
+    background-color: #F3F5FFDB;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course-curriculum h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #2a2e77;
+    margin-bottom: 30px;
+}
+
+.curriculum-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.module-column {
+    flex: 1;
+    margin-left: 60px;
+}
+
+.module {
+    margin-bottom: 30px;
+}
+
+.module h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.module ul {
+    list-style: none;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.module ul li {
+    font-size: 15px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.module ul li::before {
+    content: '•';
+    color: #2a2e77;
+    font-weight: bold;
+    display: inline-block;
+    width: 20px;
+    margin-left: -20px;
+}
+
+/* Certification Section */
+.certification {
+    background-color: #FFFCFC;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 50px auto;
+    max-width: 90%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.certification-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.certification-text {
+    color: #0B0B0B;
+    max-width: 66%;
+}
+
+.certification-text h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.certification-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.certification-text ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+
+.certificate-border {
+
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.certificate-border img {
+    max-width: 100%;
+    height: auto;
+    max-height: 190px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: contain; 
+}
+
+.certificate-border p {
+    font-size: 20px;
+    color: #4d5baf;
+    font-weight: bold;
+}
+
+
+/* FAQ Section */
+.faq {
+    margin: 50px auto;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.faq h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #FFFCFC;
+}
+
+.faq-container {
+    background-color: #F3F5FFDB;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.faq-item {
+    background-color: #FFFAFA;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer CSS */
+footer {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.3);
+    margin: 10px auto; /* Center align */
+    width: 90%; /* Same width as .footer-social for consistency */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-section ul li a {
+    text-decoration: none; 
+    color: inherit; 
+    position: relative; 
+}
+
+.footer-section ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; 
+    width: 100%;
+    height: 2px; 
+    border-bottom: 2px dotted currentColor;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out; 
+}
+
+.footer-section ul li a:hover::after {
+    opacity: 1;
+    
+}
+
+
+.footer-section {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    color: #292a49;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+}
+
+.footer-social {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.3);
+    margin: 20px auto; /* Center align */
+    text-align: center;
+    width: 90%; /* Adjusted to ensure perfect alignment */
+}
+.footer-social .social-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.footer-social .social-header h3 {
+    font-size: 24px;
+    color: #292a49;
+    font-weight: 400;
+    margin-right: 10px;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social .social-icons a img {
+    width: 24px;
+    height: 24px;
+}
+.footer-social .button-container {
+    display: flex;
+    justify-content: space-between; /* Space between buttons */
+    gap: 15%; /* Space between buttons */
+    margin-top: 10px;
+}
+
+.footer-social .Contact,
+.footer-social .Validation {
+    padding: 10px 20px;
+    background-color: #323790;
+    color: #fff;
+    border: none;
+    border-radius: 11px;
+    cursor: pointer;
+    font-size: 17px;
+    width: 330px; /* Set the desired width for the buttons */
+    flex: none; /* Prevents the buttons from growing to fill the container */
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}
+
+.footer-bottom a {
+    color: #2a2e77;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+
+/* Desktop responsiveness */
+@media (min-width: 1200px) {
+    /* Adjust header layout */
+    header {
+      max-width: 90%;
+      margin: 20px auto;
+    }
+    header .logo img {
+      height: 60px;
+    }
+    header nav {
+      flex: 1;
+      margin: 0 20px;
+    }
+    header nav a {
+      font-size: 18px;
+    }
+    header .auth-buttons {
+      gap: 1px;
+      
+    }
+    header .auth-buttons a.auth-btn {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+  
+    /* Adjust course card layout */
+    .course-card-wrapper {
+      right: 100px;
+    }
+    .course-card {
+      width: 274px;
+    }
+    .course-info h3 {
+      font-size: 20px;
+    }
+    .course-info p {
+      font-size: 16px;
+    }
+  
+    /* Adjust mentor and course includes layout */
+    .mentor-and-course-includes {
+      margin: 80px 30px;
+    }
+    .course-includes-section, .mentor-section {
+      max-width: 50%;
+    }
+    .course-includes ul li {
+      font-size: 18px;
+    }
+  
+    /* Adjust course curriculum layout */
+    .course-curriculum {
+      max-width: 80%;
+    }
+    .curriculum-wrapper {
+      gap: 20px;
+    }
+    .module-column {
+      margin-left: 80px;
+    }
+    .module h3 {
+      font-size: 20px;
+    }
+    .module ul li {
+      font-size: 16px;
+    }
+  
+    /* Adjust certification layout */
+    .certification {
+      max-width: 85%;
+    }
+    .certification-container {
+      gap: 20px;
+    }
+    .certification-text h3 {
+      font-size: 24px;
+    }
+    .certification-text ul li {
+      font-size: 18px;
+    }
+  
+    /* Adjust FAQ layout */
+    .faq {
+      max-width: 86%;
+    }
+    .faq h2 {
+      font-size: 30px;
+    }
+    .faq-container {
+      gap: 20px;
+    }
+    .faq-item {
+      padding: 30px;
+    }
+  
+    /* Adjust footer layout */
+    footer {
+      max-width: 90%;
+    }
+    .footer-content {
+      gap: 20px;
+    }
+    .footer-section h3 {
+      font-size: 22px;
+    }
+    .footer-section ul li {
+      font-size: 16px;
+    }
+    .footer-social {
+      max-width: 90%;
+    }
+    .footer-social .social-header h3 {
+      font-size: 26px;
+    }
+    .footer-social .social-icons {
+      gap: 15px;
+    }
+  }
+  
+  @media (min-width: 1500px) {
+    /* Further adjustments for larger screens */
+    header {
+      max-width: 85%;
+    }
+    .course-card-wrapper {
+      right: 150px;
+    }
+    .course-card {
+      width: 400px;
+    }
+    .mentor-and-course-includes {
+      margin: 100px 40px;
+    }
+    .course-curriculum {
+      max-width: 80%;
+    }
+    .certification {
+      max-width: 80%;
+    }
+    .faq {
+      max-width: 70%;
+    }
+    footer {
+      max-width: 80%;
+    }
+  }
